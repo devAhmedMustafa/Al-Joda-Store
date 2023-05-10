@@ -10,11 +10,8 @@ html {
 }
 body {
   font-family: "Cairo", sans-serif;
-  background: linear-gradient(
-    rgba(24, 24, 24, 0.4),
-    rgba(24, 24, 24, 0.4)
-  ),
-  url("../images/christiann-koepke-dQyS2pMYtok-unsplash.jpg");
+  background: linear-gradient(rgba(24, 24, 24, 0.4), rgba(24, 24, 24, 0.4)),
+    url("../images/christiann-koepke-dQyS2pMYtok-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -28,7 +25,6 @@ body {
   height: 100vh;
 }
 
-
 .content {
   display: flex;
   justify-content: center;
@@ -36,29 +32,28 @@ body {
   padding: 10px;
 }
 
-.content div{
+.content div {
   margin-left: 20px;
-  margin-right: 20px
+  margin-right: 20px;
 }
 
-.header{
+.header {
   width: 100%;
   text-align: center;
   padding: 10px;
-  color:whitesmoke;
+  color: whitesmoke;
   font-family: head-font;
   font-weight: bolder;
   font-size: x-large;
 }
 
-.header h1{
+.header h1 {
   background-color: #ff735c;
   display: inline-block;
   padding: 3px;
   width: 58%;
   cursor: pointer;
 }
-
 
 img {
   width: 600px;
@@ -80,9 +75,12 @@ img {
   font-size: 40px;
 }
 
-.form-group{
+.form-group {
   display: flex;
   flex-direction: column;
+}
+body {
+  background-color: red;
 }
 
 input {
@@ -138,47 +136,40 @@ button:hover {
   src: url("../webfonts/Omar-Light-1.ttf");
 }
 
-.helptext{
+.helptext {
   display: none;
 }
 
-
-@media(max-width: 1100px){
-  .image{
-    display: none
+@media (max-width: 1100px) {
+  .image {
+    display: none;
   }
 }
 
-
-@media(max-width: 700px){
-
-  body{
+@media (max-width: 700px) {
+  body {
     background: none;
   }
 
-  .container{
+  .container {
     padding: 0;
   }
 
-  input{
+  input {
     width: 250px;
   }
 
-  .header{
-    background: linear-gradient(
-    rgba(24, 24, 24, 0.4),
-    rgba(24, 24, 24, 0.4)
-    ),
-    url("../images/christiann-koepke-dQyS2pMYtok-unsplash.jpg");
+  .header {
+    background: linear-gradient(rgba(24, 24, 24, 0.4), rgba(24, 24, 24, 0.4)),
+      url("../images/christiann-koepke-dQyS2pMYtok-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 20%;
   }
 
-  .content{
+  .content {
     flex-direction: column;
     background-image: linear-gradient(-20deg, #fc6075ab 0%, #ff9b44c9 100%);
     height: 80%;
   }
-
 }
