@@ -18,10 +18,7 @@ body {
 .container {
   padding-left: 15px;
   padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100vh;
-  height: 100vh;
+  width: 100%;
 }
 
 .content {
@@ -29,11 +26,6 @@ body {
   justify-content: center;
   flex-direction: row;
   padding: 10px;
-}
-
-.content div {
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .header {
@@ -44,40 +36,18 @@ body {
   font-family: head-font;
   font-weight: 800;
   font-size: x-large;
+  background-color: #ff735c;
 }
 
 .header h1 {
-  background-color: #ff735c;
+
   display: inline-block;
   padding: 3px;
   width: 58%;
   cursor: pointer;
 }
 
-img {
-  width: 600px;
-}
-.log {
-  border-radius: 5px;
-  padding: 30px;
-  background-image: linear-gradient(-20deg, #fc6075ab 0%, #ff9b44c9 100%);
-  color: white;
-}
-.log form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.log form h1 {
-  color: #fdfbfa;
-  font-size: 40px;
-}
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
 
 input {
   width: 300px;
@@ -96,9 +66,7 @@ input {
 input:hover {
   box-shadow: 0 0 5px #ff735c;
 }
-.form-group i {
-  padding: 5px;
-}
+
 button {
   color: #ff735c;
   font-weight: 800;
@@ -113,19 +81,7 @@ button:hover {
   background-color: #ff735c;
   color: white;
 }
-.image img {
-  position: relative;
-  animation: up-and-down 5s linear infinite;
-}
-@keyframes up-and-down {
-  0%,
-  100% {
-    top: 0;
-  }
-  50% {
-    top: -50px;
-  }
-}
+
 
 @font-face {
   font-family: head-font;
@@ -143,29 +99,16 @@ button:hover {
 }
 
 @media (max-width: 700px) {
-  body {
-    background: none;
-  }
 
   .container {
     padding: 0;
   }
 
   input {
-    width: 250px;
-  }
-
-  .header {
-    background: linear-gradient(rgba(24, 24, 24, 0.4), rgba(24, 24, 24, 0.4)),
-      url("../images/christiann-koepke-dQyS2pMYtok-unsplash.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 20%;
+    width: 200px;
   }
 
   .content {
     flex-direction: column;
-    background-image: linear-gradient(-20deg, #fc6075ab 0%, #ff9b44c9 100%);
-    height: 80%;
   }
 }

@@ -1,50 +1,21 @@
-{% load static %}
+{% extends 'main.html' %}
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      id="viewport"
-      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;"
-    />
-    <!-- google-font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap"
-      rel="stylesheet"
-    />
-    <!-- normalize -->
-    <link rel="stylesheet" href="../../static/styles/normalize.css" />
-    <!-- fontasome -->
-    <link rel="stylesheet" href="../../static/styles/all.min.css" />
-    <!-- Style-css -->
-    <link rel="stylesheet" href="../../static/styles/master.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <h1>اْلِ جُودا</h1>
-      </div>
 
-      <div class="content">
-        <div class="log">
-          <form method="POST">
-            {% csrf_token %}
-            <h1>{{title}}</h1>
-            <div class="form-group">
-              {{form}}
-              <button type="submit">REGISTER</button>
-            </div>
-          </form>
-        </div>
-        <div class="image">
-          <img src="../../static/images/float_logo.png" alt="" />
-        </div>
-      </div>
+{% block content %}
+
+<link rel="stylesheet" href="../../static/styles/authentication.css">
+
+<div class="log">
+  <form method="POST">
+    {% csrf_token %}
+    <h1>{{title}}</h1>
+    <div class="form-group">
+      {{form}}
+      <button type="submit">{{title}}</button>
     </div>
-  </body>
-</html>
+  </form>
+</div>
+<div class="image">
+  <img src="../../static/images/float_logo.png" alt="" />
+</div>
+{% endblock%}
