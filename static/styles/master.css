@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  direction: rtl;
 }
 html {
   scroll-behavior: smooth;
@@ -15,10 +16,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .container {
   padding-left: 15px;
   padding-right: 15px;
-  width: 100%;
+  background-color: #ff735c;
 }
 
 .content {
@@ -29,27 +31,39 @@ body {
 }
 
 .header {
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr 1fr;
   text-align: center;
-  padding: 10px;
   color: whitesmoke;
+  background-color: #ff735c;
+  align-items: center;
+}
+.header h1 {
   font-family: head-font;
   font-weight: 800;
-  font-size: x-large;
-  background-color: #ff735c;
-}
+  font-size: xx-large;
 
-.header h1 {
-
-  display: inline-block;
   padding: 3px;
-  width: 58%;
   cursor: pointer;
 }
+i {
+  font-size: 25px;
+  margin-left: 10px;
+}
+a {
+  margin-left: 10px;
+}
 
+.search {
+  width: 80%;
+  height: 45px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
 
-
-input {
+form input {
   width: 300px;
   margin-bottom: 15px;
   border-radius: 5px;
@@ -60,10 +74,10 @@ input {
   background-color: rgb(250, 250, 250);
   margin: 10px;
 }
-.input ::placeholder {
+form .input ::placeholder {
   padding-left: 5px;
 }
-input:hover {
+form input:hover {
   box-shadow: 0 0 5px #ff735c;
 }
 
@@ -82,7 +96,6 @@ button:hover {
   color: white;
 }
 
-
 @font-face {
   font-family: head-font;
   src: url("../webfonts/Omar-Light-1.ttf");
@@ -99,12 +112,11 @@ button:hover {
 }
 
 @media (max-width: 700px) {
-
   .container {
     padding: 0;
   }
 
-  input {
+  form input {
     width: 200px;
   }
 
