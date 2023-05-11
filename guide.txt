@@ -1,0 +1,7 @@
+Product
+--Name
+--Model
+--Price
+--in stock
+--image
+--discount
