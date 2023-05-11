@@ -52,8 +52,17 @@ i {
 }
 a {
   margin-left: 10px;
+  width: 40px;
+  height: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
 }
-
+a:hover {
+  background-color: white;
+  color: #ff735c;
+}
 .search {
   width: 80%;
   height: 45px;
