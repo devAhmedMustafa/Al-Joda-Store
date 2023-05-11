@@ -79,9 +79,6 @@ img {
   display: flex;
   flex-direction: column;
 }
-body {
-  background-color: red;
-}
 
 input {
   width: 300px;
