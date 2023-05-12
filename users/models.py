@@ -6,6 +6,8 @@ from django.conf import settings
 from django.db.models.signals import post_save
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import obtain_auth_token
+from phonenumber_field.modelfields import PhoneNumberField
+
 # Create your models here.
 
 class CustomUserManager(BaseUserManager):
@@ -47,8 +49,24 @@ class CustomUser(AbstractUser):
     REQUIRED_FIELDS = []
     objects = CustomUserManager()
 
+class ShippingData(models.Model):
 
-@receiver(post_save, sender = settings.AUTH_USER_MODEL)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='shipping_data')
+    phone_number = PhoneNumberField(null=True, blank=True)
+    address = models.CharField(null=True, blank=True)
+    city = models.CharField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.user.email}"
+
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
         Token.objects.create(user=instance)
+
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_ship_data(sender, instance, created, **kwargs):
+    if created:
+        ShippingData.objects.create(user=instance)

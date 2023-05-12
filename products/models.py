@@ -13,10 +13,10 @@ class Product(models.Model):
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    brand = models.CharField(max_length=100)
+    brand = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=1000, null=True)
     price = models.FloatField()
-    on_stock = models.BooleanField(default=True)
+    in_stock = models.BooleanField(default=True)
     left = models.IntegerField()
     image = models.ImageField(upload_to='images/%y/%m/%d', null=True)
     details = models.JSONField(null=True)
