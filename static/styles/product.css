@@ -9,24 +9,25 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
 a {
   text-decoration: none;
 }
+
 .product-card {
-  width: 380px;
-  position: relative;
-  box-shadow: 0 2px 7px #dfdfdf;
-  margin: 50px auto;
+  width: 220px;
   background: #fafafa;
+  border-radius: 20px;
 }
 
 .product-tumb {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px;
-  padding: 50px;
+  height: 180px;
+  padding: 20px;
   background: #f0f0f0;
+  border-radius: 20px;
 }
 
 .product-tumb img {
@@ -35,7 +36,8 @@ a {
 }
 
 .product-details {
-  padding: 30px;
+  padding: 20px;
+
 }
 
 .product-catagory {
@@ -44,53 +46,56 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   color: #ccc;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .product-details h4 a {
   font-weight: 500;
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   color: #363636;
   text-decoration: none;
   transition: 0.3s;
 }
-.in-stock::after {
-  content: "";
-  position: absolute;
+
+.stock_status{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+
+.in-stock span {
   width: 9px;
   height: 9px;
   border-radius: 50%;
   background-color: green;
-  top: 445px;
-  left: 95px;
+
 }
-.out-stock::after {
-  content: "";
-  position: absolute;
+.out-stock span {
   width: 9px;
   height: 9px;
   border-radius: 50%;
   background-color: red;
-  top: 405px;
-  left: 105px;
 }
 
 .product-details h4 a:hover {
   color: #ff735c;
 }
-.product-details p {
-  font-size: 15px;
-  line-height: 22px;
-  margin-bottom: 18px;
+
+.product-details h4 {
   color: #999;
+  margin: 5px;
+  cursor: default;
 }
 
 .product-bottom-details {
   overflow: hidden;
   border-top: 1px solid #eee;
-  padding-top: 20px;
+  padding-top: 5px;
 }
 
 .product-bottom-details div {

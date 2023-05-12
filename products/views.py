@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .models import Product
 import json
 # Create your views here.
@@ -8,14 +8,26 @@ import json
 def home(request):
     
     user = request.user
-    
 
     return HttpResponse(f'Hello{user.first_name}')
 
+
 def products(request):
 
-    products = Product.objects.get(name = 'IPhone 6')
+    products = Product.objects.all()
 
-    details = products.details
+    return render(request, 'products/products.html', {'products': products}) # type: ignore
 
-    return render(request, 'products/products.html', {'products': products, 'details': details.items})
+
+
+def search(request):
+
+    search_filter = request.GET.get('search')
+
+    products = Product.objects.filter(name__icontains=search_filter)
+
+    data = {
+        
+    }
+
+    return JsonResponse(data)
