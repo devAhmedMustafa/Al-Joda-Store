@@ -49,5 +49,9 @@ const container = document.querySelector(".products_container")
 image.onload = function(){
     console.log("hello")
     const {R,G,B} = getAverageColor(image, 4)
-    container.style.background = `rgb(${R}, ${G}, ${B})`
+
+    const colors = [R,G,B]
+    
+    let style = `linear-gradient(-20deg, rgb(${R}, ${G}, ${B}), rgb(${R+(B*2/3)}, ${G+(R*2/3)}, ${B+(G*2/3)}))`;
+    container.style.backgroundImage = style;
 }

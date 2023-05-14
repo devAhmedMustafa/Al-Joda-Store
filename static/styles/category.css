@@ -35,10 +35,12 @@
 
 .slide .main-nav {
   display: flex;
+  margin: auto;
+  justify-content: center;
 }
-@media (max-width: 767px) {
+@media (max-width: 1150px) {
   .slide .main-nav {
-    margin: auto;
+    flex-wrap: wrap;
   }
 }
 
@@ -51,16 +53,17 @@
   /* height: 72px; */
   position: relative;
   color: black;
-  padding: 30px 40px;
+  padding: 20px 30px;
   overflow: hidden;
   font-size: 14px;
   transition: var(--main-transition);
-  width: fit-content
+  width: fit-content;
 }
 @media (max-width: 767px) {
   .slide .main-nav > li > a {
     padding: 10px;
     font-size: 14px;
+    margin: 5px
   }
 }
 

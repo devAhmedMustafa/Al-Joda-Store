@@ -8,9 +8,10 @@
 
 .listing
 {
-  margin: 10px;
-  padding: 10px;
+  width: 100%;
+  padding: 30px;
   font-family: 'Open Sans', 'Arial', sans-serif;
+  background-color: white;
   
   /*just for pen positioning*/
 }

@@ -1,13 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-
-body{
-    background-color: rgb(240, 240, 240);
-}
 
 .products_box{
     display: flex;

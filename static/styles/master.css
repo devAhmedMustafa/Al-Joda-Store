@@ -17,10 +17,6 @@ body {
   background-size: cover;
 }
 
-.container {
-  background-color: #158cfd;
-}
-
 .content {
   display: flex;
   justify-content: center;
@@ -54,6 +50,8 @@ a {
   height: 20px;
   font-weight: bold;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
 a:hover {
   border-bottom: 2px solid whitesmoke;
@@ -98,6 +96,11 @@ button {
 button:hover {
   background-color: #ff735c;
   color: white;
+}
+
+.icons{
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @font-face {

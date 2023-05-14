@@ -1,129 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../static/styles/page-product.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- Start Articles -->
-    <div class="page">
-      <div class="container">
-        <div class="box">
-          <img decoding="async" src="../../static/images/product.jpg" alt="" />
-          <div class="content">
-            <h3>Test Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Reprehenderit
-            </p>
-          </div>
-          <div class="info">
-            <a href="">Add cart</a>
-            <i class="fa-solid fa-plus"></i>
-          </div>
-        </div>
-        <div class="box">
-          <img decoding="async" src="../../static/images/product.jpg" alt="" />
-          <div class="content">
-            <h3>Test Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Reprehenderit
-            </p>
-          </div>
-          <div class="info">
-            <a href="">Add cart</a>
-            <i class="fa-solid fa-plus"></i>
-          </div>
-        </div>
-        <div class="box">
-          <img decoding="async" src="../../static/images/product.jpg" alt="" />
-          <div class="content">
-            <h3>Test Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Reprehenderit
-            </p>
-          </div>
-          <div class="info">
-            <a href="">Add cart</a>
-            <i class="fa-solid fa-plus"></i>
-          </div>
-        </div>
-        <div class="box">
-          <img decoding="async" src="../../static/images/product.jpg" alt="" />
-          <div class="content">
-            <h3>Test Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Reprehenderit
-            </p>
-          </div>
-          <div class="info">
-            <a href="">Add Cart</a>
-            <i class="fa-solid fa-plus"></i>
-          </div>
-        </div>
-        <div class="box">
-          <img decoding="async" src="../../static/images/product.jpg" alt="" />
-          <div class="content">
-            <h3>Test Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Reprehenderit
-            </p>
-          </div>
-          <div class="info">
-            <a href="">Add Cart</a>
-            <i class="fa-solid fa-plus"></i>
-          </div>
-        </div>
-        <div class="box">
-          <img decoding="async" src="../../static/images/product.jpg" alt="" />
-          <div class="content">
-            <h3>Test Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Reprehenderit
-            </p>
-          </div>
-          <div class="info">
-            <a href="">Add cart</a>
-            <i class="fa-solid fa-plus"></i>
-          </div>
-        </div>
-        <div class="box">
-          <img decoding="async" src="../../static/images/product.jpg" alt="" />
-          <div class="content">
-            <h3>Test Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Reprehenderit
-            </p>
-          </div>
-          <div class="info">
-            <a href="">Add cart</a>
-            <i class="fa-solid fa-plus"></i>
-          </div>
-        </div>
-        <div class="box">
-          <img decoding="async" src="../../static/images/product.jpg" alt="" />
-          <div class="content">
-            <h3>Test Title</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Reprehenderit
-            </p>
-          </div>
-          <div class="info">
-            <a href="">Add Cart</a>
-            <i class="fa-solid fa-plus"></i>
-          </div>
-        </div>
-      </div>
+{% extends 'main.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="../../static/styles/page-product.css">
+
+<div class="page">
+<div class="p-container">
+{% for product in products %}
+
+  <div class="box">
+    <img decoding="async" src="{{product.image.url}}" alt="" />
+    <div class="p-content">
+      <h3>{{product.name}}</h3>
+      <p>
+        {{product.description}}
+      </p>
     </div>
-  </body>
-</html>
+    <div class="info">
+      <a href="">Add cart</a>
+      <i class="fa-solid fa-plus"></i>
+    </div>
+  </div>
+  
+{% endfor %}
+</div>
+</div>
+
+{% endblock %}

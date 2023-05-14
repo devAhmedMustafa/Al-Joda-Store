@@ -26,7 +26,19 @@ def products(request):
 
     return render(request, 'products/products.html', {'products': products, 'categories': categories})
 
+def cart(request):
 
+    categories = Category.objects.all()
+
+    return render(request, 'cart/cart.html', {'categories': categories})
+
+def categored_products(request, pk):
+
+    categories = Category.objects.all()
+    category = Category.objects.get(pk=pk)
+    products = Product.objects.filter(category=category)
+
+    return render(request, 'products/page-product.html', {'categories': categories,'category': category, 'products': products})
 
 def search(request):
 
