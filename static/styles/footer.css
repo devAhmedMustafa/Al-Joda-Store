@@ -127,3 +127,20 @@ footer {
   background-color: white;
   padding: 10px 5px;
 }
+i {
+  color: #535151;
+  font-size: 30px;
+  transition: 0.3s;
+}
+i:first-child:hover {
+  color: #0676e8;
+}
+i:nth-child(2):hover {
+  color: #15a4fa;
+}
+i:nth-child(3):hover {
+  color: #ff7603;
+}
+i:last-child:hover {
+  color: red;
+}
