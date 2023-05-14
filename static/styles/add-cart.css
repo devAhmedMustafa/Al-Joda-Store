@@ -13,7 +13,7 @@ main {
   height: 27rem;
   margin: 30px auto;
   background-color: #ffffff;
-  box-shadow: 0px 0 11px 0 #ff735c;
+  box-shadow: 0px 0 11px 0 #158cfd;
   display: flex;
   align-items: flex-start;
   padding: 3rem;
@@ -75,7 +75,7 @@ h4 {
   height: 50px;
   font-size: 20px;
   font-weight: 800;
-  color: #ff735c;
+  color: #158cfd;
   border: none;
   border-radius: 5px;
   margin-bottom: 15px;
@@ -84,7 +84,7 @@ h4 {
 }
 
 .add-to-cart:hover {
-  background-color: #ff735c;
+  background-color: #158cfd;
   color: white;
 }
 
@@ -110,7 +110,7 @@ h3 i {
   height: 2.7rem;
   width: 11rem;
   background-color: white;
-  color: #ff735c;
+  color: #158cfd;
   font-weight: bold;
   font-size: 16px;
   border: 0.1rem solid #d6d5d9;
@@ -120,7 +120,7 @@ h3 i {
 }
 .add-to-cart-2:hover,
 .add-to-wishlist:hover {
-  background-color: #ff735c;
+  background-color: #158cfd;
   color: white;
 }
 .add-to-cart-2 i,

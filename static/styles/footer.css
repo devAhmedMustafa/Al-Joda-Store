@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  text-transform: capitalize;
+  background-color: rgb(0, 0, 0);
+}
+
+footer {
+  background-color: rgb(58, 58, 58);
+  margin-top: 300px;
+}
+.container {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.container .content {
+  display: flex;
+  padding: 50px;
+  justify-content: space-between;
+}
+.container .content .col {
+  display: flex;
+  flex-direction: column;
+}
+.container .content p:first-child:not(.flex p:first-child) {
+  color: white;
+  font-size: 22px;
+}
+.container .content p:not(.col, .column p:first-child) {
+  color: rgb(136, 136, 136);
+  margin-bottom: 10px;
+}
+.container .content .col:first-child {
+  gap: 25px;
+}
+.container .content .col:first-child .flex {
+  display: flex;
+  gap: 50px;
+}
+.container .content .col:first-child .flex .col-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .content .col:first-child .flex .col-info p {
+  font-size: 14px;
+}
+.container .content .col:first-child .flex .col-info span {
+  color: white;
+  font-size: 17px;
+}
+.container .content .col .column:first-child {
+  margin-right: 50px;
+}
+
+.container .content .col .column p:first-child {
+  margin-bottom: 25px;
+}
+.container .content .col .column p:not(p:first-child) {
+  margin-bottom: 12px;
+}
+.container .content .col:last-child {
+  gap: 15px;
+}
+.container .content .col:last-child .email {
+  display: flex;
+}
+.container .content .col:last-child .email input {
+  width: 300px;
+  height: 40px;
+  font-size: 17px;
+  color: white;
+  background-color: rgb(76, 76, 76);
+  padding-left: 10px;
+  border: 0;
+  outline: 0;
+}
+.container .content .col:last-child .email button {
+  width: 200px;
+  height: 40px;
+  color: white;
+  background-color: rgb(229, 39, 39);
+  padding-left: 10px;
+  border: 0;
+  outline: 0;
+  text-align: center;
+  margin-left: -30px;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+.container .content .col:last-child .social {
+  display: flex;
+  gap: 20px;
+}
+.container .content .col:last-child .social img {
+  width: 40px;
+}
+.content-foot {
+  background-color: rgb(43, 43, 43);
+}
+.content-foot .foot-text {
+  padding: 25px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.content-foot .container p {
+  color: rgb(136, 136, 136);
+}
+.content-foot .container p span {
+  color: white;
+  font-weight: bold;
+}
+.content-foot .container .pay {
+  display: flex;
+  gap: 20px;
+}
+.content-foot .container .pay img {
+  width: 70px;
+  height: 40px;
+  object-fit: contain;
+  background-color: white;
+  padding: 10px 5px;
+}
