@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper2', {
+const swiper2 = new Swiper('.swiper2', {
 
     loop: true,
 
