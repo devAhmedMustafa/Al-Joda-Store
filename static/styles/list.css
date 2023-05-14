@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+a:hover {
+  color: #158cfd;
+}
+
+.one {
+  width: 270px;
+  height: 100vh;
+  box-shadow: 0 0 10px 0 #777;
+  padding-left: 10px;
+}
+h2 {
+  font-size: 14px !important;
+  color: #363434;
+}
+label {
+  font-size: 14px;
+  padding-left: 5px;
+}
+.price {
+  width: 65px;
+  height: 31px;
+  text-align: center;
+  margin-top: 5px;
+}
+.go {
+  width: 38px;
+  height: 29px;
+  border: 1px solid #158cfd;
+  border-radius: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
