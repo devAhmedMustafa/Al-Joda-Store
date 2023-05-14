@@ -1,22 +1,30 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .models import Product
+from .models import Product, Category
 import json
 # Create your views here.
 
 
 def home(request):
     
-    user = request.user
+    categories = Category.objects.all()
+    products = Product.objects.all()
 
-    return HttpResponse(f'Hello{user.first_name}')
+    print(categories)
+    print(products)
+
+    return render(request, 'home.html', {'products': products, 'categories': categories})
 
 
 def products(request):
 
+    categories = Category.objects.all()
     products = Product.objects.all()
 
-    return render(request, 'products/products.html', {'products': products}) # type: ignore
+    print(categories)
+    print(products)
+
+    return render(request, 'products/products.html', {'products': products, 'categories': categories})
 
 
 

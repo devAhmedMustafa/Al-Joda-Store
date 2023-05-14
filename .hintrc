@@ -7,8 +7,23 @@
       "default",
       {
         "ignore": [
-          "scroll-behavior"
+          "scroll-behavior",
+          "width: fit-content",
+          "height: fit-content",
+          "backface-visibility"
         ]
+      }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ],
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off"
       }
     ]
   }

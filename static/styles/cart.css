@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+body{
+    background-color: rgb(240, 240, 240);
+}
+
+.products_box{
+    display: flex;
+    flex-direction: column;
+}
+
+.products_box h2{
+    margin-bottom: 20px;
+}
+
+.cart_box, .saved_box{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: white;
+    justify-content: space-between;
+}
+
+.product{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    border-top: 1px solid whitesmoke;
+    margin-top: 10px;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.image_box{
+    height: 150px;
+    overflow: hidden;
+}
+
+.image_box img{
+    max-width: 100%;
+}
+
+.details .price{
+    float: left
+}
+
+input[type="number"]{
+   max-width: 55px;
+   padding: 5px;
+   float: left;
+   margin-bottom: 5px;
+}
+
+.details a{
+    text-decoration: none;
+    font-size: small;
+}
+
+.price span, .shipping span{
+    font-size: x-small;
+    color: rgb(82, 82, 82)
+}
+
+.details h5, .shipping h5{
+    color: rgb(95, 95, 95);
+}
+
+.summary_box{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: fit-content
+}
+
+.price, .shipping{
+    display: flex;
+    flex-direction: row;
+}
+
+.summary div{
+    margin-bottom: 20Spx;
+    margin-top: 20px;
+    padding: 15px 0px;
+}
+
+.shipping{
+    border-bottom: 1px solid rgb(177, 177, 177);
+}
+
+.summary_box a{
+    text-align: center;
+    text-decoration: none;
+    background-color: #e25300;
+    color: white;
+    padding: 15px
+}
+
+.summary div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop{
+
+    display:block;
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid #ff5e02;
+    color : #ff5e02;
+    border-radius: 40px;
+    
+}
+
+.products_box, .summary_box, .saved_prod_box{
+    padding: 20px;
+    margin: 10px
+}
+
+/*Saved Section*/
+
+.saved_box{
+    display: block;
+}
+
+.saved_prod_box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.saved_product{
+    margin: 10px;
+    margin-top: 0;
+}
+
+.image{
+    height: 200px;
+    width: 150px;
+    overflow: hidden;
+}
+
+.image img{
+    max-width: 100%;
+}
+
+.saved_box h2{
+    margin-bottom: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+}

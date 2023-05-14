@@ -1,0 +1,52 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="../../static/styles/products.css">
+
+{% for catagory in categories %}
+
+
+<div class="swiper swiper1 listing">
+
+  <h1>{{catagory.name}}</h1>
+
+    <div class="swiper-wrapper">
+
+      {% for product in products %}
+      {% if product.category == catagory %}
+
+      <div class="swiper-slide">
+        <div class="product-card" style="width:240px">
+          <a class="img-wrapper" href="#">
+            <img src="{{product.image.url}}" alt="" />
+          </a>
+
+          <div class="note on-sale">{{product.in_stock}}</div>
+          
+          <div class="info">
+            <div class="title">{{product.name}}</div>
+            <div class="price">{{product.price}} EGP</div>
+          </div>
+          
+          <div class="actions-wrapper">
+            <a href="#" class="add-btn wishlist">Wishlist</a>
+            <a href="#" class="add-btn cart">Cart</a>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+      {% endfor %}
+    
+    </div>
+
+    <div class="swiper-button-prev swiper-button-prev1"></div>
+    <div class="swiper-button-next swiper-button-next1"></div>
+    
+</div>
+
+{% endfor %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<script src="../../static/JsScripts/swiper.js"></script>
