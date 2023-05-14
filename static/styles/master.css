@@ -20,7 +20,7 @@ body {
 .container {
   padding-left: 15px;
   padding-right: 15px;
-  background-color: #ff735c;
+  background-color: #158cfd;
 }
 
 .content {
@@ -35,7 +35,7 @@ body {
   grid-template-columns: 1fr 6fr 1fr 1fr;
   text-align: center;
   color: whitesmoke;
-  background-color: #ff735c;
+  background-color: #292929;
   align-items: center;
 }
 .header h1 {

@@ -5,3 +5,5 @@ Product
 --in stock
 --image
 --discount
+
+Main Color: #158cfd
