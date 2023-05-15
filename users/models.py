@@ -7,7 +7,6 @@ from django.db.models.signals import post_save
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import obtain_auth_token
 from phonenumber_field.modelfields import PhoneNumberField
-from purchases.models import Cart
 
 # Create your models here.
 
@@ -71,8 +70,3 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 def create_ship_data(sender, instance, created, **kwargs):
     if created:
         ShippingData.objects.create(user=instance)
-
-@receiver(post_save, sender=settings.AUTH_USER_MODEL)
-def create_cart(sender, instance, created, **kwargs):
-    if created:
-        Cart.objects.create(user=instance)
