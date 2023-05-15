@@ -1,0 +1,49 @@
+body {
+  .loading-container {
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    .loading-circle {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      &:nth-child(1),
+      &:nth-child(3),
+      &:nth-child(5) {
+        background-color: #ff421d;
+        animation: bounce 500ms infinite;
+      }
+      &:nth-child(2),
+      &:nth-child(4),
+      &:nth-child(6) {
+        background-color: #ff6536;
+        animation: bounceSecondary 500ms infinite;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounceSecondary {
+  0%,
+  100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
