@@ -26,11 +26,7 @@ def products(request):
 
     return render(request, 'products/products.html', {'products': products, 'categories': categories})
 
-def cart(request):
 
-    categories = Category.objects.all()
-
-    return render(request, 'cart/cart.html', {'categories': categories})
 
 def categored_products(request, pk):
 
@@ -38,16 +34,22 @@ def categored_products(request, pk):
     category = Category.objects.get(pk=pk)
     products = Product.objects.filter(category=category)
 
-    return render(request, 'products/page-product.html', {'categories': categories,'category': category, 'products': products})
+    context = {
+        'categories': categories,
+        'category': category,
+        'products': products
+    }
+
+    return render(request, 'products/page-product.html', context)
 
 def search(request):
 
-    search_filter = request.GET.get('search')
+    search_filter = request.GET.get('search_value')
 
-    products = Product.objects.filter(name__icontains=search_filter)
+    products = Product.objects.filter(name__icontains=search_filter).values()
 
     data = {
-        
+        'products': json.dumps(list(products))
     }
 
     return JsonResponse(data)

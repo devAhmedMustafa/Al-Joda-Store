@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'rest_framework', 'knox', 'rest_framework.authtoken',
     'users',
     'products',
+    'purchases',
 ]
 
 MIDDLEWARE = [

@@ -2,25 +2,13 @@
 
 {% block content %}
 
-<link rel="stylesheet" href="../../static/styles/page-product.css">
+
 
 <div class="page">
 <div class="p-container">
 {% for product in products %}
 
-  <div class="box">
-    <img decoding="async" src="{{product.image.url}}" alt="" />
-    <div class="p-content">
-      <h3>{{product.name}}</h3>
-      <p>
-        {{product.description}}
-      </p>
-    </div>
-    <div class="info">
-      <a href="">Add cart</a>
-      <i class="fa-solid fa-plus"></i>
-    </div>
-  </div>
+{% include 'products/product.html' %}
   
 {% endfor %}
 </div>
