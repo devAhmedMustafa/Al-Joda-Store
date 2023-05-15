@@ -20,8 +20,23 @@
     <link rel="stylesheet" href="../../static/styles/all.min.css" />
     <!-- Style-css -->
     <link rel="stylesheet" href="../../static/styles/master.css" />
+    <link rel="stylesheet" href="../../static/styles/page-product.css">
+    <style>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      body{
+          background: none;
+          background-color: #e7e7e7;
+      }
+  
+      .content > div{
+          margin-bottom: 10px
+      }
+  
+      .swiper-button-prev::after, .swiper-button-next::after{
+          display:none;
+      }
+  
+  </style>
 
   </head>
   <body>
@@ -32,12 +47,12 @@
           </div>
           
           <div class="search_box">
-            <input type="search" placeholder="انت بتدور على اي؟" class="search">
+            <input type="search" placeholder="انت بتدور على اي؟" class="search" id="search">
           </div>
 
           <div class="register">
-            <a>SignUp</a>
-            <a>Login</a>
+            <a href="{% url 'register' %}">SignUp</a>
+            <a href="{% url 'login' %}">Login</a>
           </div>
 
           <div class="icons">
@@ -48,7 +63,7 @@
 
         {% include 'products/category.html' %}
 
-        <div class="content">{% block content %} {% endblock %}</div>
+        <div class="content"> {% block content %}{% endblock %}</div>
         
       </div>
 
@@ -56,8 +71,7 @@
       
     </div>
 
-
-    <script src="../../static/JsScripts/cart_url.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../../static/JsScripts/search.js"></script>
   </body>
 </html>

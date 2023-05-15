@@ -1,3 +1,16 @@
+.content{
+  flex-direction: row;
+}
+
+.slide{
+  display: none;
+}
+
+body{
+  background: linear-gradient(rgba(24, 24, 24, 0.4), rgba(24, 24, 24, 0.4)),
+    url("../images/christiann-koepke-dQyS2pMYtok-unsplash.jpg");
+}
+
 .content div {
   margin-left: 20px;
   margin-right: 20px;
