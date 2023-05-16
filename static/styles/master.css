@@ -105,11 +105,11 @@ button:hover {
   padding: 0;
   background-color: #f6f6f6;
   position: absolute;
-  right: 84%;
   min-width: 200px;
-  top: calc(7% + 15px);
   display: none;
   z-index: 1;
+  margin-right: -95px;
+  margin-top: 20px;
 }
 .icons ul::before {
   content: "";
