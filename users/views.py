@@ -9,10 +9,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import permissions, authentication, status
 from .serializers import UserSerializer
-from .models import CustomUser as User
+from .models import CustomUser as User, ShippingData
 from .token import account_activation_token
 from django.contrib.auth.forms import AuthenticationForm
-
+from django.contrib.auth.decorators import login_required
 
 def activate(request, pk, token):
 
@@ -98,7 +98,17 @@ def login(request):
 
     return render(request, 'authentication/authentication.html', {'form': form, 'title': 'Login'})
 
-
+@login_required
 def logout(request):
     auth_logout(request)
     return JsonResponse({'message': 'logged out'})
+
+
+@login_required
+def profile(request):
+
+    context = {
+        'user': request.user,
+    }
+
+    return render(request, 'authentication/profile.html', context)

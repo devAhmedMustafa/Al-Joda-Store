@@ -28,11 +28,11 @@
         <div class="input-1">
           <div>         
             <div><label for="name">الاسم الاول</label></div>
-            <input type="text" id="name" />
+            <input type="text" id="name" value="{{user.first_name}}"/>
             </div>
             <div>          
               <div><label for="last-name">اسم العائلة</label></div>
-              <input type="text" id="last-name" />
+              <input type="text" id="last-name" value="{{user.last_name}}" />
             </div>
             <div class="but-1">            
               <input type="submit" value="تحديث البيانات" class="but">
@@ -44,11 +44,11 @@
       <div class="input-2">
         <div>
         <div><label for="البريد">البريد الالكتروني</label></div>
-        <input type="email" required value="ziadnagah02@gmail.com" readonly>
+        <input type="email" required value="{{user.email}}" readonly>
       </div>
       <div>
         <div><label for="كلمة السر">كلمة السر</label></div>
-      <input type="password" required value="555557878" readonly>
+      <input type="password" required value="{{user.password}}" readonly>
       </div>
       <div>
         <div><label for="phone">رقم الهاتف</label></div>

@@ -20,7 +20,7 @@ def cart(request):
     total = 0
 
     for i in cart_items:
-        total += (i.product.price) * (i.quantity)
+        total += i.product.price * i.quantity
 
     context = {
         'categories': Category.objects.all(),
@@ -28,7 +28,7 @@ def cart(request):
         'total': total,
     }
 
-    return render(request, 'cart/cart.html', context)
+    return render(request, 'cart/cartpage.html', context)
 
 
 def add_to_cart(request):

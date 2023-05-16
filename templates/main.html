@@ -54,10 +54,12 @@
             <input type="search" placeholder="انت بتدور على اي؟" class="search" id="search">
           </div>
 
+          {% if user.is_authenticated == False %}
           <div class="register">
             <a href="{% url 'register' %}">SignUp</a>
             <a href="{% url 'login' %}">Login</a>
           </div>
+          {% endif %}
 
           <div class="icons">
             <i class="fa-solid fa-user" style="color: #ffffff;">      
@@ -84,6 +86,7 @@
       
     </div>
 
+    <script src="../../static/JsScripts/wishlist_button.js"></script>
     <script src="../../static/JsScripts/add_to_cart.js"></script>
     <script src="../../static/JsScripts/search.js"></script>
   </body>

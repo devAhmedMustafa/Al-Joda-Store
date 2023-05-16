@@ -1,9 +1,8 @@
 from django.db import models
 from users.models import CustomUser as User
 from products.models import Product
-from datetime import datetime, date
-# Create your models here.
 from django.utils import timezone
+
 
 class Cart(models.Model):
 
@@ -23,7 +22,9 @@ class CartItem(models.Model):
 
         unique_together = ['product', 'cart']
 
+
 class Order(models.Model):
 
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     order_date = models.DateField(default=timezone.now)
+

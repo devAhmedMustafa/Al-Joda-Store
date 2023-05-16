@@ -3,15 +3,24 @@
 {% block content %}
 
 
-
 <div class="page">
-<div class="p-container">
-{% for product in products %}
 
-{% include 'products/product.html' %}
+{% include 'products/list.html' %}
+
+  <div class="category_box">
+
+    <h1>{{category.name}}</h1>
+
+    <div class="p-container">
+
+    {% for product in products %}
+
+    {% include 'products/product.html' %}
   
-{% endfor %}
-</div>
+    {% endfor %}
+    </div>
+
+  </div>
 </div>
 
 {% endblock %}

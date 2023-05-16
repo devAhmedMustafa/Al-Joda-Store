@@ -12,7 +12,7 @@
 
       {% for category in categories %}
 
-      <li class="cat_"><a href="{% url 'categoried' category.pk %}">{{category.name}}</a></li>
+      <li class="cat_"><a href="{% url 'categoried' category.slug %}">{{category.name}}</a></li>
 
       {% endfor %}
     </ul>

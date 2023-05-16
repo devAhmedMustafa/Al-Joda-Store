@@ -1,9 +1,16 @@
 from django.db import models
 from users.models import CustomUser as User
+from django.template.defaultfilters import slugify
 
 class Category(models.Model):
 
     name = models.CharField(max_length=20)
+    slug = models.SlugField(unique=True, null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        return super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -21,7 +28,6 @@ class Product(models.Model):
     image = models.ImageField(upload_to='images/%y/%m/%d', null=True)
     details = models.JSONField(null=True)
     discount = models.FloatField(null=True, blank=True)
-
     def __str__(self):
         return f"{self.category.name}: {self.name}"
 

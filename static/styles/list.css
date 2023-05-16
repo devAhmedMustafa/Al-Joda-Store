@@ -1,32 +1,22 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.list{
+  padding: 20px;
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+  color: white;
+  line-height: 30px;
 }
-body {
-  font-family: "Cairo", sans-serif;
-  font-size: 14px;
-  text-transform: capitalize;
-}
+
 a {
   text-decoration: none;
-  color: black;
   display: flex;
   flex-direction: column;
-}
-a:hover {
-  color: #158cfd;
 }
 
 .one {
   width: 270px;
   height: 100vh;
-  box-shadow: 0 0 10px 0 #777;
-  padding-left: 10px;
 }
 h2 {
   font-size: 14px !important;
-  color: #363434;
 }
 label {
   font-size: 14px;

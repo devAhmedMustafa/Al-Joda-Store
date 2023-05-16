@@ -6,30 +6,36 @@ import json
 
 def home(request):
     
+    user = request.user
     categories = Category.objects.all()
     products = Product.objects.all()
 
-    print(categories)
-    print(products)
+    context = {
+        'products': products,
+        'categories': categories,
+    }
 
-    return render(request, 'home.html', {'products': products, 'categories': categories})
+    return render(request, 'home.html', context)
 
 
 def products(request):
 
+    user = request.user
     categories = Category.objects.all()
     products = Product.objects.all()
 
-    print(categories)
-    print(products)
+    context = {
+        'products': products,
+        'categories': categories
+    }
 
-    return render(request, 'products/products.html', {'products': products, 'categories': categories})
+    return render(request, 'products/products.html', context)
 
 
-def categored_products(request, pk):
+def categored_products(request, slug):
 
     categories = Category.objects.all()
-    category = Category.objects.get(pk=pk)
+    category = Category.objects.get(slug=slug)
     products = Product.objects.filter(category=category)
 
     context = {
@@ -52,3 +58,4 @@ def search(request):
     }
 
     return JsonResponse(data)
+
