@@ -94,51 +94,6 @@ button:hover {
   color: white;
 }
 
-.icons {
-  display: flex;
-  justify-content: space-evenly;
-}
-.icons ul {
-  font-size: 16px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #f6f6f6;
-  position: absolute;
-  min-width: 200px;
-  display: none;
-  z-index: 1;
-  margin-right: -95px;
-  margin-top: 20px;
-}
-.icons ul::before {
-  content: "";
-  border-width: 10px;
-  border-style: solid;
-  border-color: transparent transparent #f6f6f6 transparent;
-  position: absolute;
-  right: 96px;
-  top: -20px;
-}
-.icons > i:hover ul {
-  display: block;
-}
-.icons > i ul li a {
-  display: block;
-  padding: 15px;
-  text-decoration: none;
-  color: #333;
-  transition: 0.3s;
-}
-.icons > i ul li a:hover {
-  padding-left: 25px;
-}
-.icons > i ul li:not(:last-child) a {
-  border-bottom: 1px solid #ddd;
-}
-.icons > i ul li:last-child a:hover {
-  background-color: #cdc7c7;
-}
 @font-face {
   font-family: head-font;
   src: url("../webfonts/Omar-Light-1.ttf");
@@ -202,10 +157,4 @@ button:hover {
 }
 .icons > i ul li a:hover {
   padding-left: 25px;
-}
-.icons > i ul li:not(:last-child) a {
-  border-bottom: 1px solid #ddd;
-}
-.icons > i ul li:last-child a:hover {
-  background-color: #cdc7c7;
 }
