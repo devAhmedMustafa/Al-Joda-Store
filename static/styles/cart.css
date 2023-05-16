@@ -15,7 +15,7 @@
     justify-content: space-between;
 }
 
-.product{
+.cart_item{
     display: grid;
     grid-template-columns: 1fr 4fr;
     border-top: 1px solid whitesmoke;
@@ -76,7 +76,7 @@ input[type="number"]{
 }
 
 .summary div{
-    margin-bottom: 20Spx;
+    margin-bottom: 20px;
     margin-top: 20px;
     padding: 15px 0px;
 }
@@ -88,7 +88,7 @@ input[type="number"]{
 .summary_box a{
     text-align: center;
     text-decoration: none;
-    background-color: #e25300;
+    background-color: #2196f3;
     color: white;
     padding: 15px
 }
@@ -100,13 +100,15 @@ input[type="number"]{
 
 .shop{
 
-    display:block;
+    display:flex;
+    align-items: center;
     width: fit-content;
     padding: 10px;
-    border: 1px solid #ff5e02;
-    color : #ff5e02;
+    border: 1px solid #2196f3;
+    color : #2196f3;
     border-radius: 40px;
     
+
 }
 
 .products_box, .summary_box, .saved_prod_box{

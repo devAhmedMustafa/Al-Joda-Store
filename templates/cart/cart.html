@@ -8,70 +8,30 @@
 
     <div class="products_box">
 
-        <h2>Cart</h2>
+        <h2>سلة المشتريات</h2>
 
-        <div class="product">
+        {% for cart_item in cart_items %}
 
-            <div class="image_box">
+            {% include 'cart/cart_item.html' %}
 
-                <img src="../../static/images/austin-wade-d2s8NQ6WD24-unsplash.jpg" alt="" />
+        {% endfor %}
 
-            </div>
-
-            <div class="details">
-
-                <h5>Brand</h5>
-                <h4>Product Name</h4>
-                <br>
-                <h3 class="price">100 <span>EGP</span></h3>
-                <br>
-                <input type="number" value=1>
-
-                <a>Delete</a>
-
-            </div>
-            
-        </div>
-
-        <div class="product">
-
-            <div class="image_box">
-
-                <img src="../../static/images/austin-wade-d2s8NQ6WD24-unsplash.jpg" alt="" />
-
-            </div>
-
-            <div class="details">
-
-                <h5>Brand</h5>
-                <h4>Product Name</h4>
-                <br>
-                <h3 class="price">100 <span>EGP</span></h3>
-                <br>
-                <input type="number" value=1>
-
-                <a>Delete</a>
-
-            </div>
-            
-        </div>
-
-        <a class="shop">Continue Shopping</a>
+        <a class="shop"> <i class="fa-solid fa-circle-arrow-right"></i> أكمل تسوق</a>
 
     </div>
 
     <div class="summary_box">
 
         <div class="summary">
-            <h2>Summary</h2>
+            <h2>ملخص</h2>
 
-            <div class="shipping">Shipping Fee <h5>100 <span>EGP</span> </h5> </div>
+            <div class="shipping">تمن التوصيل <h5>100 <span>EGP</span> </h5> </div>
 
-            <div class="price">Total <h5>100 <span>EGP</span> </h5> </div>
+            <div class="price">المجموع الكلي <h5>{{total}} <span>EGP</span> </h5> </div>
 
         </div>
 
-        <a href="">Checkout</a>
+        <a href="">اتمام الشراء</a>
 
     </div>
 
@@ -83,8 +43,6 @@
 
     <div class="saved_prod_box">
 
-        
-
         <div class="saved_product">
 
             <div class="image">
@@ -97,50 +55,11 @@
             </div>
 
         </div>
-
-        <div class="saved_product">
-
-            <div class="image">
-                <img src="../../static/images/austin-wade-d2s8NQ6WD24-unsplash.jpg" alt="" />
-            </div>
-
-            <div class="details">
-                <h4>Product Name</h4>
-                <a>Delete</a>
-            </div>
-
-        </div>
-
-        <div class="saved_product">
-
-            <div class="image">
-                <img src="../../static/images/austin-wade-d2s8NQ6WD24-unsplash.jpg" alt="" />
-            </div>
-
-            <div class="details">
-                <h4>Product Name</h4>
-                <a>Delete</a>
-            </div>
-
-        </div>
-
-        <div class="saved_product">
-
-            <div class="image">
-                <img src="../../static/images/austin-wade-d2s8NQ6WD24-unsplash.jpg" alt="" />
-            </div>
-
-            <div class="details">
-                <h4>Product Name</h4>
-                <a>Delete</a>
-            </div>
-
-        </div>
-
-        
 
     </div>
 
 </div>
+
+<script src="../../static/JsScripts/quantity_set.js"></script>
 
 {% endblock %}

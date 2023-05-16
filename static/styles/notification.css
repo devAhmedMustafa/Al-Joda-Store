@@ -1,0 +1,21 @@
+.notification{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #333333;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 190px;
+    margin: 10px;
+    align-items: center;
+    transition: top 1s;
+}
+
+.notification p{
+    word-break: break-all;
+    word-wrap: break-word;
+}

@@ -1,0 +1,22 @@
+<div class="cart_item">
+
+    <div class="image_box">
+    
+        <img src="{{cart_item.product.image.url}}" alt="" />
+    
+    </div>
+    
+    <div class="details">
+    
+        <h5>{{cart_item.product.brand}}</h5>
+        <h4>{{cart_item.product.name}}</h4>
+        <br>
+        <h3 class="price">{{cart_item.product.price}} <span>EGP</span></h3>
+        <br>
+        <input type="number" value="{{cart_item.quantity}}" onchange="set_quantity({{cart_item.pk}}, this.value)">
+    
+        <a>Delete</a>
+    
+    </div>
+
+</div>

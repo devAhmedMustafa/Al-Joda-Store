@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Product, Category
 import json
-# Create your views here.
 
 
 def home(request):
@@ -27,7 +26,6 @@ def products(request):
     return render(request, 'products/products.html', {'products': products, 'categories': categories})
 
 
-
 def categored_products(request, pk):
 
     categories = Category.objects.all()
@@ -41,6 +39,7 @@ def categored_products(request, pk):
     }
 
     return render(request, 'products/page-product.html', context)
+
 
 def search(request):
 
