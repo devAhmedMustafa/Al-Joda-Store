@@ -32,10 +32,10 @@ $("#search").change(function(){
                     ${products[i].description}
                   </p>
                 </div>
-                <div class="info">
+                <button class="info" onclick="add_to_cart(${products[i].pk}, 1)">
                   <a href="">Add cart</a>
                   <i class="fa-solid fa-plus"></i>
-                </div>
+                </button>
               </div>`
             }
             

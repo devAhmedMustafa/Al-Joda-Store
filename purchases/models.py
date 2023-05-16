@@ -3,10 +3,11 @@ from users.models import CustomUser as User
 from products.models import Product
 from datetime import datetime, date
 # Create your models here.
+from django.utils import timezone
 
 class Cart(models.Model):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cart')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.user.email
@@ -14,12 +15,15 @@ class Cart(models.Model):
 
 class CartItem(models.Model):
 
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='cart_item')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='cart_item')
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, null=True)
 
+    class Meta:
+
+        unique_together = ['product', 'cart']
 
 class Order(models.Model):
 
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='order')
-    order_date = models.DateField(default=datetime.now())
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    order_date = models.DateField(default=timezone.now())

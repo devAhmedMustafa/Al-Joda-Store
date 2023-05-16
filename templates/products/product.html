@@ -6,9 +6,8 @@
         {{product.description}}
       </p>
     </div>
-    <div class="info">
-      <a href="">Add cart</a>
-      <input type='number' value="{{product.pk}}" style="display: none">
+    <div class="info" onclick="add_to_cart({{product.pk}}, 1)">
+      <a>Add cart</a>
       <i class="fa-solid fa-plus"></i>
     </div>
 </div>
