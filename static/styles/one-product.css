@@ -1,0 +1,115 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Cairo", sans-serif;
+}
+.page-1 {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .page-1 {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .page-1 {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .page-1 {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+
+/* Start page */
+
+img {
+  width: 30%;
+  height: 400px;
+}
+.text-1 {
+  margin-top: 100px;
+  line-height: 1.8;
+  display: flex;
+}
+h2 {
+  width: 360px;
+}
+.info {
+  margin-left: 50px;
+}
+span {
+  width: 100px;
+  height: 30px;
+  background-color: #404553;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px;
+}
+p {
+  color: #777;
+  font-size: 15px;
+}
+.rate {
+  background-color: #82ae04;
+  letter-spacing: 2px;
+}
+.rate i {
+  font-size: 10px;
+}
+p b {
+  color: #404553;
+  font-size: 23px;
+}
+.btn {
+  display: flex;
+  line-height: 2;
+}
+.btn input {
+  width: 44px;
+  height: 40px;
+  border: 1px solid #777;
+  color: #777;
+  outline: none;
+  text-align: center;
+  border-radius: 5px;
+}
+.add-cart {
+  margin-left: 10px;
+}
+.add-cart input {
+  width: 201px;
+  height: 46px;
+  background-color: #158cfd;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.add-cart input:hover {
+  background-color: #404553;
+}
+.add-cart i {
+  margin-left: 5px;
+  font-size: 18px;
+  color: #c2bfbf;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.add-cart i:hover {
+  color: red;
+}
