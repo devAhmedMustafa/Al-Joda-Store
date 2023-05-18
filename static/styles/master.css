@@ -76,11 +76,11 @@ form .input ::placeholder {
   padding-left: 5px;
 }
 form input:hover {
-  box-shadow: 0 0 5px #ff735c;
+  box-shadow: 0 0 5px #2196f3;
 }
 
 button {
-  color: #ff735c;
+  color: #2196f3;
   font-weight: 800;
   padding: 10px;
   border: none;
@@ -90,7 +90,7 @@ button {
   transition: 0.7s;
 }
 button:hover {
-  background-color: #ff735c;
+  background-color: #2196f3;
   color: white;
 }
 

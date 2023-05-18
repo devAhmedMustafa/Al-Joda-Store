@@ -1,4 +1,6 @@
 <div class="box">
+
+  <a href="{% url 'product' product.slug %}">
     <div class="image-box">
       <img decoding="async" src="{{product.image.url}}" alt="" />
     </div>
@@ -9,8 +11,10 @@
         {{product.description}}
       </p>
     </div>
-    <div class="info" onclick="add_to_cart({{product.pk}}, 1)">
-      <a>Add cart</a>
-      <i class="fa-solid fa-plus"></i>
-    </div>
+  </a>
+  <div class="info" onclick="add_to_cart({{product.pk}}, 1)">
+    <a>Add cart</a>
+    <i class="fa-solid fa-plus"></i>
+  </div>
+    
 </div>

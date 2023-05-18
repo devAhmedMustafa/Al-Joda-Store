@@ -24,7 +24,7 @@ $("#search").change(function(){
 
                 console.log(products[i])
                 products_container = document.querySelector('.p-container');
-                products_container.innerHTML += `  <div class="box">
+                products_container.innerHTML += `<a href="{% url '' ${products[i].slug}" %}>  <div class="box">
                 <img decoding="async" src="${url}" alt="" />
                 <div class="p-content">
                   <h3>${products[i].name}</h3>
@@ -36,7 +36,7 @@ $("#search").change(function(){
                   <a href="">Add cart</a>
                   <i class="fa-solid fa-plus"></i>
                 </button>
-              </div>`
+              </div> </a>`
             }
             
         }

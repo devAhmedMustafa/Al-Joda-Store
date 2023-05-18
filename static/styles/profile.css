@@ -41,15 +41,15 @@ input {
   background-color: #f3f4f8;
   height: 100vh;
 }
-h1 {
+.profile h1 {
   color: #404553;
 }
-h2 {
+.profile h2 {
   color: #404553;
   background-color: #ffffff;
   margin-top: 15px;
 }
-p {
+.profile p {
   color: #777;
 }
 .input-1 {
@@ -111,7 +111,7 @@ p {
 .sup input:hover {
   color: #777;
 }
-a {
+.profile a {
   color: #fa0000;
   font-size: 16px;
   font-weight: normal;

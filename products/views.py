@@ -41,13 +41,29 @@ def categored_products(request, slug):
     context = {
         'categories': categories,
         'category': category,
-        'products': products
+        'products': products,
+        'title': category.name,
     }
 
     return render(request, 'products/page-product.html', context)
 
 
 def search(request):
+
+    search_filter = request.GET.get('search_value')
+
+    categories = Category.objects.all()
+    products = Product.objects.filter(name__icontains=search_filter)
+
+    context = {
+        'categories': categories,
+        'products': products,
+        'title': 'نتائج البحث',
+    }
+
+    return render(request, 'products/page-product.html', context)
+
+def searchAJAX(request):
 
     search_filter = request.GET.get('search_value')
 
@@ -59,3 +75,13 @@ def search(request):
 
     return JsonResponse(data)
 
+def product(request, slug):
+
+    product = Product.objects.get(slug=slug)
+
+    context = {
+        'product': product,
+        'categories': Category.objects.all(),
+    }
+
+    return render(request, 'products/one-product.html', context)

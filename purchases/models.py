@@ -21,10 +21,3 @@ class CartItem(models.Model):
     class Meta:
 
         unique_together = ['product', 'cart']
-
-
-class Order(models.Model):
-
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
-    order_date = models.DateField(default=timezone.now)
-

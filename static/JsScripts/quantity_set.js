@@ -7,7 +7,6 @@ function set_quantity(pk, quantity){
         url: '/change_quantity/',
         data: {'pk': pk, 'quantity': int_quantity},
         success: function(data){
-            console.log('done');
         }
     })
     

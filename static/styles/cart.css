@@ -20,6 +20,7 @@
     grid-template-columns: 1fr 4fr;
     border-top: 1px solid whitesmoke;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .details{
@@ -30,7 +31,7 @@
 }
 
 .image_box{
-    height: 150px;
+    max-height: 170px;
     overflow: hidden;
 }
 
@@ -107,7 +108,6 @@ input[type="number"]{
     border: 1px solid #2196f3;
     color : #2196f3;
     border-radius: 40px;
-    
 
 }
 

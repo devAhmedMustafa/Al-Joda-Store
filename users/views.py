@@ -13,6 +13,7 @@ from .models import CustomUser as User, ShippingData
 from .token import account_activation_token
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
+from products.models import Category
 
 def activate(request, pk, token):
 
@@ -105,10 +106,11 @@ def logout(request):
 
 
 @login_required
-def profile(request):
+def profile(request, email):
 
     context = {
         'user': request.user,
+        'categories': Category.objects.all()
     }
 
     return render(request, 'authentication/profile.html', context)
