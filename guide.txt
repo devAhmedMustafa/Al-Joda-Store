@@ -7,3 +7,11 @@ Product
 --discount
 
 Main Color: #158cfd
+
+Order
+--Images
+--Order ID
+--تاريخ الطلب
+--تاريخ التوصيل
+--الحالة
+--السعر
