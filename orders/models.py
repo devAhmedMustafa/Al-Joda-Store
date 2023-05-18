@@ -9,6 +9,7 @@ class Order(models.Model):
     ship_data = models.ForeignKey(ShippingData, on_delete=models.CASCADE, unique=False)
     date = models.DateField(default=timezone.now)
     status = models.CharField(max_length=30, default='pending')
+    paid = models.BooleanField(default=False)
 
 
 class OrderItem(models.Model):

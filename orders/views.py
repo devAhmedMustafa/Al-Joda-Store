@@ -35,9 +35,25 @@ def checkout(request):
     return JsonResponse(data)
 
 
+@login_required
 def orders(request):
 
     user = request.user
-    carts = Cart
+    orders = Order.objects.filter(user=user).annotate(Count('orderitem'))
 
     return render(request, 'delivere/orders.html')
+
+
+@login_required
+def order(request, order_id):
+    
+    user = request.user
+    order = Order.objects.get(user=user, id=order_id)
+    order_items = OrderItem.objects.filter(order=order)
+
+    context = {
+        'order': order,
+        'order_items': order_items,
+    }
+
+    return render(request, 'delivere/order.html', context)
