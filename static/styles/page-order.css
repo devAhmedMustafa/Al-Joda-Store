@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  direction: rtl;
+}
+body {
+  font-family: "Cairo", sans-serif;
+}
+.o-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .o-container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .o-container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .o-container {
+    width: 1170px;
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.header i {
+  color: #dfdbdb;
+}
+.header p {
+  color: #6d6d6d;
+}
+.header-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+.header-info button {
+  height: 30px;
+  width: 120px;
+  background-color: #158cfd;
+  color: white;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.header-info button i {
+  margin-right: 5px;
+}
+.header-text {
+  display: flex;
+  gap: 30px;
+  margin-top: 17px;
+}
+
+.image-box {
+  display: flex;
+  width: 300px;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+}
+.or-content {
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dfdbdb;
+  border-top: 1px solid #dfdbdb;
+  background-color: rgb(245, 245, 245);
+}
+.bag {
+  display: flex;
+  margin-top: 18px;
+  padding: 15px;
+  margin: 20px;
+  background-color: white;
+  border-right: 4px solid #158cfd;
+}
+.product-info {
+  display: flex;
+  align-items: center;
+  width: 900px;
+  justify-content: space-between;
+}
+.product,
+.price {
+  font-weight: bold;
+  line-height: 1.8;
+  margin-right: 10px;
+}
+.or-text {
+  display: flex;
+  direction: ltr;
+  justify-content: space-between;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  background-color: rgb(250, 250, 250);
+}
+.or-text > div {
+  margin: 20px;
+  color: rgb(80, 80, 80);
+}
+.summry div {
+  display: flex;
+  justify-content: space-between;
+}
+.total {
+  display: flex;
+  gap: 10px;
+}
+.or-text {
+  padding-top: 10px;
+}
