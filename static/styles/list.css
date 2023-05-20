@@ -1,14 +1,14 @@
 .list{
   padding: 20px;
-  background-image: linear-gradient(to top, #005bea 0%, #333333 100%);
-  color: white;
+  background-color: rgb(245, 245, 245);
   line-height: 30px;
 }
 
-a {
+.list a {
   text-decoration: none;
   display: flex;
   flex-direction: column;
+  color: rgb(68, 68, 68);
 }
 
 .one {
