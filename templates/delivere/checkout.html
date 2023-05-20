@@ -1,0 +1,147 @@
+<head>
+
+    <link rel="stylesheet" href="../../static/styles/checkout.css">
+
+    <meta
+      name="viewport"
+      id="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;"
+    />
+
+    <link rel="stylesheet" href="../../static/styles/normalize.css">
+    <link rel="stylesheet" href="../../static/styles/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+
+<header>
+
+    <div class="logo">
+        <i class="icon icon-basket"></i>ال جودا</div>
+    
+    </div>
+    <div class="notification">
+    أكمل عملية الشراء
+    </div>
+
+    <div class="details shadow">
+
+        {% for item in cart_items %}
+
+        <div class="details__item">
+
+            
+            <div class="item__details">
+                <div class="item__title">
+                    {{item.product.name}}
+                </div>
+                <div class="item__price">
+                    {{item.product.price}} EGP
+                </div>
+                <div class="item__quantity">
+                    الكمية: {{item.quantity}}
+                </div>
+            </div>
+
+            <div class="item__image">
+                <img class="iphone" src="{{item.product.image.url}}" alt="">
+            </div>
+
+        </div>
+
+        {% endfor %}
+    </div>
+</header>
+<section class="content">
+
+<div class="discount"></div>
+
+<form method="post">
+{% csrf_token %}
+
+<div class="container">
+    <div class="payment">
+    
+    <div class="info">
+        <div class="payment__cc">
+            <div class="payment__title">
+                <i class="icon icon-user"></i>البيانات الشخصية
+            </div>
+            
+                <div class="form__cc">
+
+                <div class="row">
+                    <div class="field">
+                        <div class="title">العنوان التفصيلي</div>
+                        <input type="text" name="address" class="input txt text-validated" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field small">
+
+                    <div class="title">المدينة</div>
+
+                    <select class="input ddl" name="city">
+
+                        <option value="cairo">القاهرة</option>
+                        <option value="giza">الجيزة</option>
+                        <option value="alex">الاسكندرية</option>
+                        
+                    </select>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <div class="title">رقم الموبايل</div>
+                        <input type="phonenumber" name="phonenumber" class="input txt" />
+                    </div>
+                </div>
+
+                </div>
+        </div>
+        
+    </div>
+
+    <div class="payment__title">
+        طرق الدفع
+    </div>
+    <div class="payment__types">
+
+        <div>
+            <label>Paypal <i class="fa-brands fa-paypal"></i> </label>
+            <input type="radio" name="payment_method" class="payment__type payment__type--paypal" value="paypal">
+        </div>
+
+        <div>
+            <label>Cash <i class="fa-solid fa-money-bill-wave"></i></label>
+            <input type="radio" name="payment_method" class="payment__type payment__type--cash" value="cash">
+        </div>
+    </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="actions">
+
+    <button type='submit' class="btn action__submit">اكد طلبك
+        <i class="icon icon-arrow-right-circle"></i>
+    </button>
+    <a href="{% url 'home' %}" class="backBtn">ارجع للمتجر</a>
+
+    </div>
+</section>
+</div>
+
+</form>

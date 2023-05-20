@@ -1,0 +1,393 @@
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    color: #0a0a0a;
+    line-height: 1.4;
+    direction: rtl;
+    padding: 0;
+}
+
+header>div{
+    margin: 50px
+}
+
+.notification{
+    text-decoration:underline;
+}
+
+a {
+  color: #000;
+}
+
+
+.backBtn {
+  margin-top: 20px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.logo .icon {
+  font-size: 32px;
+  line-height: 32px;
+  margin-right: 5px;
+}
+
+
+.details {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.details__item {
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 150px;
+    align-items: center;
+
+}
+
+.details__user {
+  background: #f6f9fc;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #dadada;
+}
+
+
+.item__title {
+  font-size: 28px;
+  font-weight: 600;
+}
+.item__price {
+  font-size: 22px;
+  color: #bec3cb;
+}
+
+.item__image {
+  width: 8%;
+  border-radius: 8px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.icon {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+header {
+  background-color: #f6f9fc;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container>div{
+    width: 60%;
+}
+
+.shadow {
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.row {
+  display: flex;
+}
+
+.txt {
+  border-color: #e1e8ee;
+  width: 100%;
+}
+
+.input {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  padding: 10px;
+  padding-left: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #5e6977;
+  width: fit-content
+}
+
+input[type="text"] {
+  display: initial;
+  padding: 15px;
+}
+
+.text-validated {
+  border-color: #7dc855;
+  background-image: url("../images/icon-tick.png");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+}
+
+.ddl {
+  border-color: #f0f4f7;
+  background-color: #f0f4f7;
+  width: fit-content;
+}
+
+.title {
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+
+.field {
+    margin-bottom: 20px;
+    width: 100%;
+}
+.field.small {
+  width: auto;
+}
+
+.notification {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+.notification .icon {
+  font-size: 28px;
+  color: #7dc855;
+  line-height: 28px;
+  margin-right: 10px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 0 40px 0;
+}
+
+.payment {
+  padding: 20px 0 0 0;
+}
+.payment__title {
+  margin: 40px 0 20px 0;
+  font-size: 18px;
+  display: flex;
+  text-align: left;
+}
+.payment__title .icon {
+  margin-right: 10px;
+}
+
+.btn {
+  font-family: "Josefin Sans", sans-serif;
+  border-radius: 8px;
+  border: 0;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #246eea;
+  padding: 20px 60px;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+.btn .icon {
+  margin-left: 10px;
+  font-size: 20px;
+}
+.btn:hover {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  background: #4984ea;
+}
+.btn.action__back {
+  background: transparent;
+  color: #a0a0a0;
+}
+
+.payment__types {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.payment__types>div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.payment__type label{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    flex-direction: row;
+}
+
+.payment__types label i{
+    font-size: 20px;
+    margin: 0 10px;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.payment__types label i:hover{
+    color: #4984ea;
+}
+
+.payment__types input[type="radio"]{
+    width: 30px
+}
+
+.info {
+  display: flex;
+}
+
+.payment__cc {
+  flex: 60%;
+}
+
+.payment__shipping {
+  flex: 40%;
+}
+
+
+.payment__type {
+  display: flex;
+  border: 2px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 20px 40px;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+    align-items: center;
+  cursor: pointer;
+  color: #bebebe;
+  transition: all 0.15s ease;
+  margin: 10px
+}
+.payment__type:hover {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+.payment__type.active {
+  color: #0a0a0a;
+  background: #f6fcf7;
+  border-color: #7dc855;
+}
+.payment__type .icon {
+  font-size: 32px;
+  margin-right: 10px;
+}
+.payment__type + .payment__type {
+  margin-left: 10px;
+}
+
+.icon-xl {
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.content {
+  display: block;
+}
+
+.thankyou {
+  display: block;
+}
+.thankyou .details {
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+}
+.thankyou .details h3 {
+  font-weight: 600;
+}
+.thankyou .details__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.thankyou .details__item .icon-xl {
+  font-size: 32px;
+  color: #7dc855;
+  line-height: 32px;
+}
+
+.loading {
+  position: relative;
+}
+.loading:after {
+  -webkit-animation: spinAround .5s infinite linear;
+          animation: spinAround .5s infinite linear;
+  border: 4px solid #7dc855;
+  border-radius: 290486px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  height: 5em;
+  width: 5em;
+  position: absolute;
+}
+.loading .details__item {
+  opacity: 0;
+}
+
+@-webkit-keyframes spinAround {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spinAround {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
