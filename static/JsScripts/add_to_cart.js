@@ -1,3 +1,4 @@
+
 function add_to_cart(pk, quantity){
     
     let int_pk = parseInt(pk)
@@ -7,6 +8,7 @@ function add_to_cart(pk, quantity){
         
         url: '/add_to_cart/',
         data: { 'pk': int_pk, 'quantity': int_quantity },
+        
         success: function (data){
 
             let main_container = document.querySelector('body');
@@ -34,7 +36,7 @@ function add_to_cart(pk, quantity){
                 }, 2000)
             })
 
-        }
+        },
         
     })
     

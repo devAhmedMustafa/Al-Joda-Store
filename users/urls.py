@@ -9,5 +9,6 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('activate/<pk>/<token>/', views.activate, name='activate'),
     path('email_sent/', views.email_sent, name='email_sent'),
-    path('profile/<str:email>', views.profile, name='profile')
+    path('profile/<str:email>', views.profile, name='profile'),
+    path('ajax/user_validate/', views.user_validation, name='user_validate'),
 ]

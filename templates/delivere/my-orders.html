@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="../../static/styles/my-orders.css">
+
+<header>
+
+    <div class="header">
+        <p>الرئيسية</p>
+        <i class="fa-solid fa-chevron-left"></i>
+        <p>الطلبات</p>
+      </div>
+
+  <div class="details shadow">
+
+    {% for order in orders %}
+
+    <a href="{% url 'order' order.pk  %}">
+
+        <div class="details__item">
+
+            
+            <div class="item__details">
+                <div class="item__title">
+                    {{order.pk}}
+                </div>
+                <div class="item__price">
+                    {{order.total_price}} EGP
+                </div>
+                <div class="item__date">
+                    التاريخ: {{order.date}}
+                </div>
+            </div>
+
+            <div class="item__image">
+                اضغط للتفاصيل<i class="fa-solid fa-circle-info"></i>
+            </div>
+
+        </div>
+
+    </a>
+
+    {% endfor %}
+  </div>
+</header>
+
+{% endblock %}

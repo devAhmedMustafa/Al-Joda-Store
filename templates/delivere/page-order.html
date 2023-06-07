@@ -1,0 +1,96 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="../../static/styles/page-order.css" />
+
+<div class="o-parent">
+  <div class="o-container">
+    <!-- start head -->
+    <div class="header">
+      <p>الرئيسية</p>
+      <i class="fa-solid fa-chevron-left"></i>
+      <p>الطلبات</p>
+      <i class="fa-solid fa-chevron-left"></i>
+      <p style="color: #ababab">ID: {{order.pk}}</p>
+    </div>
+    <div class="header-info">
+      <h2>رقم الطلب: {{order.pk}}</h2>
+      <!-- <button>
+        تابع السائق<i class="fa-solid fa-location-crosshairs"></i>
+      </button> -->
+    </div>
+    <div class="header-text">
+      <p>تاريخ الطلب :feb 16, 2023</p>
+      <p style="color: green; font-weight: bold">
+        مطللوب منذ :{{order.date}}
+      </p>
+    </div>
+    <!-- end head -->
+    <!-- start body -->
+    <div class="or-content">
+
+      {% for order_item in order_items %}
+
+      <div class="bag">
+        <div class="image-box">
+          <img src="{{order_item.product.image.url}}" alt="" />
+        </div>
+        
+        
+        <div class="product-info">
+          <div class="product">
+            <p>{{order_item.product.name}}</p>
+          </div>
+          <div class="price">
+            <p>سعر القطعة: {{order_item.product.price}} EGP</p>
+          </div>
+          <div class="price">
+            <p>الكمية: {{order_item.quantity}}</p>
+          </div>
+        </div>
+        
+
+
+      </div>
+
+      {% endfor %}
+    </div>
+    
+    <div class="or-text">
+      <div class="pay">
+        <h4><i class="fa-solid fa-money-check-dollar"></i>الدفع</h4>
+        <p>
+          {% if order.paid %}
+          paypal**<i class="fa-brands fa-cc-visa" style="color: #158cfd"></i>
+          {%else%}
+          كاش
+          {% endif %}
+        </p>
+      </div>
+      <div class="dilvery">
+        <h4> <i class="fa-solid fa-truck"></i>التوصيل</h4>
+        <p>العنوان</p>
+        <h5>{{order.ship_data.address}}</h5>
+      </div>
+      <div class="summry">
+        <h4><i class="fa-solid fa-receipt"></i>الملخص</h4>
+        <div class="discont">
+          <p>خصم</p>
+          <p>{{order}}</p>
+        </div>
+        <div class="dilv-p">
+          <p>التوصيل</p>
+          <p>EGP 20</p>
+        </div>
+        <div class="total" style="margin-top: 15px">
+          <p>المجموع الكلي:</p>
+          <p style="font-weight: 800">{{order.total_price}} EGP</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

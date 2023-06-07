@@ -8,7 +8,8 @@
 <div class="page-1">
   <div class="text-1">
     <div class="image-box">
-      <img decoding="async" src="{{product.image.url}}" alt="" />
+      <img id="img" decoding="async" src="{{product.image.url}}" alt="" />
+      {% comment %} <div id="result" class="img-zoom-result"></div> {% endcomment %}
     </div>
     <div class="info">
       <span>{{product.category}}</span>
@@ -16,7 +17,20 @@
       <h2>
         {{product.name}}
       </h2>
-      <p>{{product.description}}</p>
+      <p>
+        {{product.description}}
+      </p>
+
+      <div class="all_specifiers">
+        {% for key,value in details %}
+        <b>{{key}}: </b>
+        <select class="specifier" style="width:60px">
+          {% for v in value %}
+          <option  value="{{v}}">{{v}}</option>
+          {% endfor %}
+        </select>
+        {% endfor %}
+      </div>
       
       <p class="price">Now: <b> EGP {{product.price}}</b></p>
 
@@ -38,6 +52,8 @@
 {% endblock %}
 
 {% block script %}
+
+<script src="../../static/JsScripts/image_zoom.js"></script>
 
 <script>
 

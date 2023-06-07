@@ -1,119 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.profile{
+  padding: 30px;
+  background-color: white;
 }
-html {
-  scroll-behavior: smooth;
-  direction: rtl;
-}
-body {
-  font-family: "Cairo", sans-serif;
-}
-/* Small */
-@media (min-width: 768px) {
-  .contain {
-    width: 750px;
-  }
-}
-/* Medium */
-@media (min-width: 992px) {
-  .contain {
-    width: 970px;
-  }
-}
-/* Large */
-@media (min-width: 1200px) {
-  .contain {
-    width: 1170px;
-  }
-}
-input {
-  outline: none;
-}
-.contain {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.contain {
-  background-color: #f3f4f8;
-  height: 100vh;
-}
-.profile h1 {
-  color: #404553;
-}
-.profile h2 {
-  color: #404553;
-  background-color: #ffffff;
-  margin-top: 15px;
-}
-.profile p {
-  color: #777;
-}
-.input-1 {
-  margin-top: 30px;
-  color: #404553;
-  background-color: #ffffff;
+
+.profile-info>div{
+  margin: 30px 0 30px 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  justify-content: space-between;
+}
+
+.profile-info-item>p{
+  color: #1787e0;
   font-weight: bold;
-}
-.input-1 input {
-  margin-top: 10px;
-  width: 250px;
-  height: 40px;
-}
-.input-1 .but {
-  width: 135px;
-  height: 48px;
-  font-size: 17px;
-  font-weight: bold;
-  background-color: #f0f1f4;
-  color: #9c9fa3;
-  border: none;
-}
-.input-1 .but-1 {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-}
-/* end input-2 */
-.input-2 {
-  margin-top: 30px;
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-weight: bold;
-  color: #404553;
-}
-.input-2 input {
-  border: none;
-  outline: none;
-  margin-top: 10px;
-  width: 250px;
-  height: 40px;
-}
-.sup input {
-  width: 145px;
-  height: 48px;
-  margin-left: 7px;
-  background-color: #ffffff;
-  color: #404553;
-  border: 1px solid #dadce3;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
-}
-.sup input:hover {
-  color: #777;
-}
-.profile a {
-  color: #fa0000;
-  font-size: 16px;
-  font-weight: normal;
-  margin-right: 20px;
 }

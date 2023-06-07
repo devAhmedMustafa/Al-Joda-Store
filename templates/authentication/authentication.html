@@ -13,9 +13,33 @@
       {{form}}
       <button type="submit">{{title}}</button>
     </div>
+
+    {% if title == 'Login' %}
+    <span style="color:red">{{error}}</span>
+    {% endif %}
+
+    {% if title == 'Login' %}
+    <p style="margin: 30px;">ليس لديك حساب؟ <a href="{% url 'register' %}">انشأ حساب</a></p>
+    {% else %}
+    <p style="margin: 30px;">لديك حساب بالفعل؟س <a href="{% url 'login' %}">سجل</a></p>
+    {% endif %}
+
   </form>
+
+  
+
 </div>
 <div class="image">
   <img src="../../static/images/float_logo.png" alt="" />
 </div>
-{% endblock%}
+
+{% endblock %}
+
+{% block script %}
+
+{% if title == 'Sign Up' %}
+
+<script src="../../static/JsScripts/user_email_check.js"></script>
+
+{% endif %}
+{% endblock %}

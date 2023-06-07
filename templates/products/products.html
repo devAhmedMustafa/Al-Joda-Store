@@ -16,24 +16,26 @@
       {% if product.category == catagory %}
 
       <div class="swiper-slide">
+
         <div class="product-card" style="width:240px">
-          <a class="img-wrapper" href="#">
+          <a class="img-wrapper" href="{% url 'product' product.slug %}">
             <img src="{{product.image.url}}" alt="" />
           </a>
-
-          <div class="note on-sale">{{product.in_stock}}</div>
+          
+          {% if product.in_stock %}
+            <div class="note on-sale">متاح</div>
+          {% else %}
+            <div class="note no-stock">غير متاح</div>
+          {% endif %}
           
           <div class="info">
             <div class="title">{{product.name}}</div>
             <div class="price">{{product.price}} EGP</div>
           </div>
           
-          <div class="actions-wrapper">
-
-            <a onclick="add_to_cart({{product.pk}}, 1)" class="add-btn cart">Cart</a>
-            
-          </div>
+        
         </div>
+
       </div>
 
       {% endif %}

@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="../../static/styles/new_arrival.css">
+
+<div class="news_box">
+
+  <h1>الأجدد</h1>
+
+  <div class="new_arrival swiper swiper3">
+    <div class="swiper-wrapper">
+
+      {% for new_arrival in newarrivals %}
+
+      <div class="swiper-slide">
+
+        <a href="{% url 'product' new_arrival.product.slug %}">
+      
+          <div class="el-wrapper">
+            <div class="box-up">
+              <img class="img" src="{{new_arrival.product.image.url}}" alt="">
+              <div class="img-info">
+                <div class="info-inner">
+                  <span class="p-name">{{new_arrival.product.name}}</span>
+                  <span class="p-company">{{new_arrival.product.brand}}</span>
+                </div>
+                <div class="a-size">Available sizes : <span class="size">
+                  {% for size, v in new_arrival.product.details.items %}
+                    {%for x in v%}
+                      {{x}}
+                    {% endfor %}
+                  {% endfor %}
+                </span></div>
+              </div>
+            </div>
+
+            <div class="box-down">
+              <div class="h-bg">
+                <div class="h-bg-inner"></div>
+              </div>
+
+              <a class="cart" href="#">
+                <span class="price">{{new_arrival.product.price}}EGP</span>
+              </a>
+            </div>
+
+          </div>
+
+        </a>
+
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+    <div class="swiper-button-prev swiper-button-prev3"> <i class="fa-solid fa-circle-chevron-right"></i> </div>
+    <div class="swiper-button-next swiper-button-next3"> <i class="fa-solid fa-circle-chevron-left"></i> </div>
+    
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="../../static/JsScripts/swiper3.js"></script>

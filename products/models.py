@@ -5,10 +5,11 @@ from django.template.defaultfilters import slugify
 class Category(models.Model):
 
     name = models.CharField(max_length=20)
-    slug = models.SlugField(unique=True, null=True, blank=True)
+    slug = models.SlugField(unique=True, null=True, blank=True, allow_unicode=True) # type: ignore
 
     def save(self, *args, **kwargs):
         if not self.slug:
+            print(self.name)
             self.slug = slugify(self.name)
         return super().save(*args, **kwargs)
 
@@ -28,19 +29,26 @@ class Product(models.Model):
     image = models.ImageField(upload_to='images/%y/%m/%d', null=True)
     details = models.JSONField(null=True)
     discount = models.FloatField(null=True, blank=True)
-    slug = models.SlugField(unique=True, null=True, blank=True)
-    
-    def __str__(self):
-        return f"{self.category.name}: {self.name}"
+    slug = models.SlugField(unique=True, null=True, blank=True, allow_unicode=True) # type: ignore
 
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
+        if self.left == 0:
+            self.in_stock = False
+            
         return super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
 
+class NewArrival(models.Model):
+    
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.product.name
 
 class Rating(models.Model):
 

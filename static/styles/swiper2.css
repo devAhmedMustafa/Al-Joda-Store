@@ -8,7 +8,7 @@
     flex-direction: row;
     height: 450px;
     width: 100%;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .products_swiper{
@@ -73,13 +73,13 @@
 
 .products_swiper .options a{
 
-    color: whitesmoke;
+    color: rgb(17, 17, 17);
     width: fit-content;
     height: auto;
     margin: 0;
     text-decoration: none;
     font-size: x-large;
-    border: 2px solid whitesmoke;
+    border: 2px solid rgb(17, 17, 17);
     border-radius: 30px;
     padding: 10px;
     display: flex;

@@ -69,6 +69,9 @@ def sign_up(request):
 
 
 def login(request):
+
+    form = AuthenticationForm()
+
     if request.method == 'POST':
 
         form = AuthenticationForm(request, data=request.POST)
@@ -76,7 +79,7 @@ def login(request):
 
         if form.is_valid():
 
-            email = form.cleaned_data.get('email')
+            email = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
 
             user = User.objects.get(email__exact=email)
@@ -86,16 +89,14 @@ def login(request):
                 user = authenticate(email=email, password=password)
                 if user is not None:
                     auth_login(request, user)
-                    return redirect('')
+                    return redirect('home')
 
                 else:
-                    return JsonResponse({'error': 'Invalid email or password'})
+                    return render(request,'authentication/authentication.html',{'form': form, 'error': 'Invalid email or password'})
 
             else:
                 send_email_verify(user, domain)
                 return redirect('email_sent')
-
-    form = AuthenticationForm()
 
     return render(request, 'authentication/authentication.html', {'form': form, 'title': 'Login'})
 
@@ -110,7 +111,17 @@ def profile(request, email):
 
     context = {
         'user': request.user,
-        'categories': Category.objects.all()
+        'categories': Category.objects.all(),
+        'ship_data': ShippingData.objects.get(user=request.user),
     }
 
     return render(request, 'authentication/profile.html', context)
+
+def user_validation(request):
+
+    email = request.GET.get('email')
+    is_taken = User.objects.filter(email__iexact=email).exists()
+
+    data = {'is_taken': is_taken}
+
+    return JsonResponse(data)

@@ -14,7 +14,6 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap"
       rel="stylesheet"
     />
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <!-- normalize -->
@@ -42,53 +41,70 @@
   
   </style>
 
+
+
   </head>
   <body>
-      <div class="container">
-        <div class="header">
-          <div class="Logo">
-            <a href="{% url 'home' %}"><h1>اْلِ جُودا</h1></a>
-          </div>
+
+    {% include 'loading.html' %}
+  
+    <div class="container">
+      <div class="header">
+        <div class="Logo">
+          <a href="{% url 'home' %}"><h1 style="font-size: 60px">اْلِ جُودا</h1></a>
+        </div>
+        
+        
+
+        {% if user.is_authenticated == False %}
+        <div class="register">
+          <a style="margin: 20px" href="{% url 'register' %}">اٍنشاء حساب</a>
+          <a style="margin: 20px" href="{% url 'login' %}">تسجيل دخول</a>
+        </div>
+        {% endif %}
+
+        <div class="icons">
           
-          <form method="GET" action="{% url 'search' %}">
-            <div class="search_box">
-              <input type="search" placeholder="انت بتدور على اي؟" name="search_value" class="search" id="search">
-              <button type="submit" class="search_btn"><i class="fa-solid fa-search"></i></button>
-            </div>
-          </form>
-
-          {% if user.is_authenticated == False %}
-          <div class="register">
-            <a href="{% url 'register' %}">SignUp</a>
-            <a href="{% url 'login' %}">Login</a>
-          </div>
-          {% endif %}
-
-          <div class="icons">
-            
-            <i class="fa-solid fa-list" style="color: #ffffff;">
-              <ul>
-                <li><a href="#الطلبيات"><i class="fa-solid fa-list" style="color: #158cfd; font-size: 16px; margin-left: 10px;"></i>الطلبيات</a></li>
-                <li><a href="#العناوين"><i class="fa-solid fa-location-dot" style="color: #158cfd; font-size: 16px; margin-left: 10px;"></i>العناوين</a></li>
-                <li><a href="#عمليات الدفع"><i class="fa-solid fa-money-check-dollar" style="color: #158cfd; font-size: 16px; margin-left: 10px;"></i>عمليات الدفع</a></li>
-                <li><a href="{% url 'profile' user.email %}"><i class="fa-solid fa-user" style="color: #158cfd; font-size: 16px; margin-left: 10px;"></i>حسابك</a></li>
-              </ul></i>
-            <a href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;" id="cart_btn"></i></a>
-    
-          </div>
+          <i class="fa-solid fa-list" style="color: #ffffff;">
+            <ul>
+              <li><a href="{% url 'orders' %}"><i class="fa-solid fa-list" style="color: #158cfd; font-size: 16px; margin-left: 10px;"></i>الطلبيات</a></li>
+              <li><a href="#العناوين"><i class="fa-solid fa-location-dot" style="color: #158cfd; font-size: 16px; margin-left: 10px;"></i>العناوين</a></li>
+              <li><a href="#عمليات الدفع"><i class="fa-solid fa-money-check-dollar" style="color: #158cfd; font-size: 16px; margin-left: 10px;"></i>عمليات الدفع</a></li>
+              {% if user.is_authenticated %}
+              <li><a href="{% url 'profile' user.email %}"><i class="fa-solid fa-user" style="color: #158cfd; font-size: 16px; margin-left: 10px;"></i>حسابك</a></li>
+              {% endif %}
+            </ul></i>
+          <a href="{% url 'cart' %}"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;" id="cart_btn"></i></a>
+  
         </div>
 
-        {% include 'products/category.html' %}
+        <form method="GET" action="{% url 'search' %}" class="search_form">
+          <div class="search_box">
+            <input type="search" placeholder="انت بتدور على اي؟" name="search_value" class="search" id="search">
+            <button type="submit" class="search_btn"><i class="fa-solid fa-search"></i></button>
+          </div>
+        </form>
 
-        <div class="content"> {% block content %}{% endblock %}</div>
-        
       </div>
+
+      {% include 'products/category.html' %}
+
+      <div class="content"> {% block content %}{% endblock %}</div>
 
       {% include 'footer.html' %}
       
     </div>
-    
+  
+    <script>
+      window.onload = function()
+      {
+        document.querySelector(".loading-container").style.display = "none";
+      }
+    </script>
+
     <script src="../../static/JsScripts/add_to_cart.js"></script>
+    <script src="../../static/JsScripts/filter_by_price.js"></script>
+    
 
     {% block script %}{% endblock %}
 

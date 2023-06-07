@@ -91,3 +91,11 @@ h1{
   animation: moving-arrow 0.6s linear infinite;
 }
 /* End product */
+
+.box .price{
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--main-color);
+  display: flex;
+  align-items: center;
+}

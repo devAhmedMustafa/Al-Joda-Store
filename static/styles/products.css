@@ -96,6 +96,7 @@
 .product-card:hover .info
 {
   height: 40px;
+  cursor: pointer;
 }
 
 .product-card:hover .info:before
@@ -124,7 +125,7 @@
   color: #000;
 }
 
-.price
+.product-card .price
 {
   background: #e32d2c;
   position: absolute;
@@ -213,10 +214,12 @@
 
 .note.no-stock
 {
-  background: #191919;
+  background: #b10000;
   color: #fff;
 }
 
 img{
   max-width: 100%;
 }
+
+

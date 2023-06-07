@@ -145,3 +145,6 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 PAYPAL_RECEIVER_EMAIL = 'am1804067@gmail.com'
 PAYPAL_TEST = True
+
+LOGIN_URL='/login'
+LOGIN_REDIRECT_URL='/login/'

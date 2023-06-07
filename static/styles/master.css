@@ -15,6 +15,9 @@ body {
   background-size: cover;
 }
 
+.container{
+}
+
 .content {
   display: flex;
   justify-content: center;
@@ -27,11 +30,18 @@ ul {
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 6fr 1fr 1fr;
   text-align: center;
   color: whitesmoke;
-  background-color: #292929;
+  background: linear-gradient(
+        rgba(24, 24, 24, 0.5), 
+        rgba(24, 24, 24, 0.5)
+      ),
+     url("../images/imani-bahati-LxVxPA1LOVM-unsplash.jpg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   align-items: center;
+  padding: 30px 100px;
+  grid-gap: 20px;
 }
 .header h1 {
   font-family: head-font;
@@ -50,16 +60,63 @@ a {
   cursor: pointer;
   text-decoration: none;
   color: white;
+  transition: 0.3s;
+}
+
+.search_form{
+  width: 70%;
+  margin: auto;
+  transition: 0.3s;
+}
+
+.search_box{
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .search {
-  width: 80%;
-  height: 45px;
-  padding: 10px;
+  width: 100%;
+  height: 50px;
   outline: none;
   border: none;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 5px;  
+  font-size: large;     
 }
+
+.search_btn {
+  height: 50px;
+  color: BLACK;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.search_btn i{
+  margin: auto;
+}
+
+@media(max-width: 700px){
+
+  .header{
+    padding: 0;
+  }
+
+  .search_form{
+    width: 100%;
+  }
+
+  .search, .search_btn{
+    border-radius: 0;
+  }
+}
+
 
 form input {
   width: 300px;
@@ -70,7 +127,6 @@ form input {
   transition: 0.3s;
   padding: 10px;
   background-color: rgb(250, 250, 250);
-  margin: 10px;
 }
 form .input ::placeholder {
   padding-left: 5px;
@@ -131,7 +187,8 @@ button:hover {
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: #f6f6f6;
+  background-color: #f6f6f6da;
+  border-radius: 5px;
   position: absolute;
   min-width: 200px;
   display: none;

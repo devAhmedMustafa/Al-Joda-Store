@@ -10,6 +10,7 @@
 
 .image-box{
   height: fit-content;
+  position: relative;
 }
 
 .image-box img{
@@ -55,6 +56,20 @@
   line-height: 2;
   flex-direction: column;
 }
+
+/* .img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  width: 100%;
+  height: 300px;
+
+} */
 
 .text-1 .btn input {
   width: 44px;
@@ -155,4 +170,22 @@
     margin-left: 0;
   }
 
+  .all_specifiers{
+    
+    justify-content: center;
+  }
+
+}
+
+.all_specifiers{
+  display: flex;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.specifier{
+  font-size: 0.6em;
+  color: #5f5f5f;
+  padding: 5px;
+  border-radius: 5px;
 }

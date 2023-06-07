@@ -33,25 +33,27 @@ body {
     width: 1170px;
   }
 }
-.header {
+.o-container .header {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-top: 30px;
+  background: transparent;
+  padding: 0;
 }
-.header i {
+.o-container .header i {
   color: #dfdbdb;
 }
-.header p {
+.o-container .header p {
   color: #6d6d6d;
 }
-.header-info {
+.o-container .header-info {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   margin-top: 30px;
 }
-.header-info button {
+.o-container .header-info button {
   height: 30px;
   width: 120px;
   background-color: #158cfd;
@@ -60,10 +62,10 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-.header-info button i {
+.o-container .header-info button i {
   margin-right: 5px;
 }
-.header-text {
+.o-container .header-text {
   display: flex;
   gap: 30px;
   margin-top: 17px;
@@ -71,8 +73,9 @@ body {
 
 .image-box {
   display: flex;
-  width: 300px;
+  width: 100px;
   align-items: center;
+  height: auto;
 }
 
 img {
@@ -112,16 +115,19 @@ img {
   font-size: 17px;
   line-height: 1.8;
   margin-top: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
   background-color: rgb(250, 250, 250);
+  padding: 15px;
 }
 .or-text > div {
-  margin: 20px;
+  margin: 10px;
   color: rgb(80, 80, 80);
+  align-items: center;
+  border-bottom: 1px solid #dfdbdb;
 }
 .summry div {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
 }
 .total {
   display: flex;

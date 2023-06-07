@@ -1,6 +1,5 @@
 from django.db import models
 from users.models import CustomUser as User
-from orders.models import Order
 from purchases.models import Cart
 
 class Payment(models.Model):
